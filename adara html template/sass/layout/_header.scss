@@ -1,0 +1,256 @@
+#main-header {
+    .header-top {
+        @include for_breakpoint(portrait_phones){
+            display: none;
+        }
+        @include for_breakpoint(landscape_phones){
+            display: none;
+        }
+        background: $header_top_bg;
+        @include padding(top, 5px);
+        @include padding(bottom, 5px);
+        .header-left {
+            ul {
+                li {
+                        display: inline-block;
+                        font-size: 11px;
+                        color: #d3cfcf;
+                        font-family: $fonts_jost;
+                        font-weight: map-get($fontweight, medium);
+                        @include padding(left, 8px);
+                        @include padding(right, 8px);
+                        position: relative;
+                        &:after {
+                            @include position(absolute, 7px, -3px);
+                            content: '';
+                            @include after_wh(1px, 11px, #636262);
+                        }
+                        &:last-child:after{
+                            opacity: 0;
+                        }
+                    a {
+                        font-size: 11px;
+                        color: #d3cfcf;
+                        font-family: $fonts_jost;
+                        font-weight: map-get($fontweight, medium);
+
+                    }
+                }
+            }
+        }
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            .lang {
+                position: relative;
+                &:after {
+                    @include position(absolute, 7px, -7px);
+                    content: '';
+                    @include after_wh(1px, 11px, #636262);
+                }
+                select {
+                    @extend %header_right_select;
+                    option {
+                        @extend %header_right_option;
+                    }
+                }
+            }
+            .count {
+                select {
+                    @extend %header_right_select;
+                    text-transform: uppercase;
+                    option {
+                        @extend %header_right_option;
+                    }
+                }
+            }
+        }
+    }
+    .navbar {
+        padding: 0;
+        padding-top: 40px;
+        @include for_breakpoint(portrait_phones){
+            padding-top: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 999;
+         }
+         @include for_breakpoint(landscape_phones){
+            padding-top: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 999;
+         }
+         @include for_breakpoint(tablets){
+            padding-top: 30px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 999;
+         }
+         #navbarToggle {
+            @include for_breakpoint(portrait_phones){
+                text-align: center;
+                background: $primary_color;
+                padding: 20px;
+             }
+             @include for_breakpoint(landscape_phones){
+                text-align: center;
+                background: $primary_color;
+                padding: 20px;
+             }
+             
+             @include for_breakpoint(tablets){
+                text-align: center;
+                background: $primary_color;
+                padding: 20px;
+             }
+        }
+        .navbar-brand.d-none {
+            @include position_l(absolute,20px,50%);
+            @include transfrom(translateX(-50%));
+            z-index: 999;
+        }
+        .navbar-brand.d-lg-none {
+            @include for_breakpoint(portrait_phones){
+                width: 80px;
+                @include padding(left, 15px);
+            }
+            @include for_breakpoint(landscape_phones){
+                width: 80px;
+                @include padding(left, 15px);
+            }
+            @include for_breakpoint(tablets){
+                width: 120px;
+                @include padding(left, 15px);
+            }
+        }
+        button {
+            @include for_breakpoint(portrait_phones){
+               outline: none;
+               font-size: 30px;
+            }
+            @include for_breakpoint(landscape_phones){
+                outline: none;
+                font-size: 30px;
+             }
+             
+            @include for_breakpoint(tablets){
+                outline: none;
+                font-size: 30px;
+             }
+        }
+        ul {
+            li {
+                @include for_breakpoint(portrait_phones){
+                    margin: 5px 0;
+                 }
+                 @include for_breakpoint(landscape_phones){
+                    margin: 5px 0;
+                 }
+                 
+                 @include for_breakpoint(tablets){
+                    margin: 5px 0;
+                 }
+                &:hover a::after {
+                    width: 55px;
+                }
+                a {
+                    font-size: $para_font_size;
+                    font-family: $fonts_roboto;
+                    font-weight: map-get($fontweight, f_black);
+                    color: $navbar_color;
+                    text-transform: uppercase;
+                    @include for_breakpoint(portrait_phones){
+                        font-weight: 600;
+                     }
+                    padding: 0;
+                    @include padding(left, 8px);
+                    @include padding(right, 47px);
+                    position: relative;
+                    &::after{
+                        @include position_l(absolute, 50%, 0);
+                        content: '';
+                        @include transfrom(translateY(-50%));
+                        @include after_wh(0px, 1px, $theme_color);
+                        @include transition(all linear .3s);
+                        @include for_breakpoint(portrait_phones){
+                            display: none;
+                         }
+                         @include for_breakpoint(landscape_phones){
+                            display: none;
+                         }
+                         @include for_breakpoint(tablets){
+                            display: none;
+                         }
+                    }
+                }
+                .contact {
+                    @include padding(right, 35px);
+                }
+            }
+        }
+    }
+    .header-cart {
+        @include for_breakpoint(portrait_phones){
+            display: none;
+         }
+         @include for_breakpoint(landscape_phones){
+            display: none;
+         }
+         
+         @include for_breakpoint(tablets){
+            display: none;
+         }
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        a {
+            font-size: $para_font_size;
+            color: $navbar_color;
+            @include transition(all linear .3s);
+            &:hover {
+                color: $theme_color;
+            }
+        }
+        .user {
+            @include padding(right, 14px);
+            position: relative;
+            &:after {
+                @include position(absolute, 8px, -3px);
+                content: '';
+                @include after_wh(1px, 11px, #b9b9bc);
+            }
+        }
+        .lock {
+            position: relative;
+            margin-right: 10px;
+            span {
+                font-size: 7.8px;
+                font-weight: map-get($fontweight, f_black);
+                color: $primary_color;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                background: $theme_color;
+                display: inline-block;
+                text-align: center;
+                line-height: 15px;
+                @include position(absolute, -1px, -9px)
+            }
+        }
+    }
+}
+    

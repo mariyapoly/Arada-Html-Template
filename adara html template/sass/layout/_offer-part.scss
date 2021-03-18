@@ -1,0 +1,198 @@
+#offer-part {
+    @include margin(top, -25px);
+    @include padding(bottom, 60px);
+    
+    @include for_breakpoint(portrait_phones){
+        @include padding(bottom, 20px);
+        
+    }
+    .offer-iteam {
+        
+        @include for_breakpoint(landscape_phones){
+            @include margin(bottom, 20px);
+            
+        }
+        @include for_breakpoint(tablets){
+            @include margin(bottom, 30px);
+            
+        }
+        &:hover .offer-overlay{
+            opacity: 1;
+        }
+        position: relative;
+        .single-offer {
+            display: flex;
+            align-items: center;
+            background: #f6f5ed;
+            @include padding(top, 40px);
+            @include padding(left, 35px);
+            @include padding(bottom, 40px);
+            @include padding(right, 35px);
+            @include transition(all linear .3s);
+            @include for_breakpoint(portrait_phones){
+                padding-top: 25px;
+                padding-left: 20px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+                margin-bottom: 30px;
+            }
+            .offer-img {
+                width: 50%;
+                @include for_breakpoint(portrait_phones){
+                    width: 30%;
+                }
+                @include for_breakpoint(landscape_phones){
+                    width: 40%;
+                }
+                
+                @include for_breakpoint(tablets){
+                    width: 40%;
+                }
+            }
+            .offet-text {
+                width: 50%;
+                @include for_breakpoint(portrait_phones){
+                    width: 70%;
+                }
+                @include for_breakpoint(landscape_phones){
+                    width: 60%;
+                }
+                
+                @include for_breakpoint(tablets){
+                    width: 60%;
+                }
+                @include padding(left, 25px);
+                h4 {
+                    font-size: $para2_font_size;
+                    color: $theme_color;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, semi-bold);
+                    text-transform: uppercase;
+                    @include margin(bottom, 9px);
+                }
+                h3 {
+                    font-size: $title_font_size;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, medium);
+                    line-height: 26px;
+                    @include margin(bottom, 20px);
+                    width: 147px;
+                    text-transform: uppercase;
+                    color: $title_color;
+                }
+                a {
+                    @extend %btn;
+                    color: #5a5755;
+                    @include transition(all linear .3s);
+                    &:hover {
+                        color: $theme_color;
+                    }
+                    @include for_breakpoint(portrait_phones){
+                        padding: 10px 20px;
+                    }
+                }
+            }
+            }
+        .single-offer.pb {
+            padding-bottom: 10px;
+            @include for_breakpoint(portrait_phones){
+                padding-bottom: 20px;
+            }
+        }
+        .offer-overlay {
+            display: flex;
+            align-items: center;
+            background: #f6f5ed;
+            @include padding(top, 40px);
+            @include padding(left, 35px);
+            @include padding(bottom, 40px);
+            @include padding(right, 35px);
+            @include for_breakpoint(portrait_phones){
+                padding-top: 25px;
+                padding-left: 20px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+            }
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            height: 100%;
+            background: url(../images/offer/offer_bg.png) no-repeat center;
+            background-size: cover;
+            @include transition(all linear .3s);
+            .offer-img-hidden {
+                @include for_breakpoint(portrait_phones){
+                    width: 35%;
+                    padding: 15px;
+                }
+                @include for_breakpoint(landscape_phones){
+                    width: 40%;
+                }
+                
+                @include for_breakpoint(tablets){
+                    width: 30%;
+                }
+                width: 50%;
+                padding: 30px;
+                background: #f6f5ed;
+                @include border-radius(50%);
+            }
+            .offet-overlay-text {
+                width: 50%;
+                @include for_breakpoint(portrait_phones){
+                    width: 75%;
+                }
+                @include for_breakpoint(landscape_phones){
+                    width: 60%;
+                }
+                
+                @include for_breakpoint(tablets){
+                    width: 70%;
+                    padding-left: 95px;
+                }
+                @include padding(left, 25px);
+                h4 {
+                    font-size: $para2_font_size;
+                    color: $primary_color;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, semi-bold);
+                    text-transform: uppercase;
+                    @include margin(bottom, 9px);
+                }
+                h3 {
+                    font-size: $title_font_size;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, medium);
+                    line-height: 26px;
+                    @include margin(bottom, 20px);
+                    width: 147px;
+                    text-transform: uppercase;
+                    color: $primary_color;
+                }
+                a {
+                    @extend %btn;
+                    color: #5a5755;
+                    @include transition(all linear .3s);
+                    &:hover {
+                        color: $theme_color;
+                    }
+                    @include for_breakpoint(portrait_phones){
+                        padding: 10px 20px;
+                    }
+                }
+            }
+        }
+        .offer-overlay.pb {
+            padding-bottom: 10px;
+            @include for_breakpoint(portrait_phones){
+                padding-bottom: 20px;
+            }
+            @include for_breakpoint(tablets){
+                padding-bottom: 45px;
+            }
+        }
+    }
+    
+}

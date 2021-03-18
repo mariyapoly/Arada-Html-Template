@@ -1,0 +1,34 @@
+$fonts_roboto: 'Roboto', sans-serif;
+$fonts_jost: 'Jost', sans-serif;
+$fonts_dancing_script: 'Dancing Script', cursive;
+
+$fontweight: (
+    "f_black": 900,
+    "extra_bold": 800,
+    "bold": 700,
+    "semi-bold": 600,
+    "medium": 500,
+    "regular": 400,
+);
+
+$theme_color: #ff5400;
+$title_color: #312620;
+$primary_color: #ffffff;
+$secondary_color: #282828;
+$navbar_color: #565656;
+
+$header_top_bg: #202026;
+
+$para_font_size: 14px;
+$para2_font_size: 12px;
+$para3_font_size: 13px;
+$title_font_size: 20px;
+$font_size: 16px;
+
+$media_queries : (
+    'portrait_phones'    : "only screen and (max-width: 575.98px)",
+    'landscape_phones'   : "only screen and (min-width: 576px) and (max-width: 767.98px)",
+    'tablets'            : "only screen and (min-width: 768px) and (max-width: 991.98px)",
+    'desktops'            : "only screen and (min-width: 992px) and (max-width: 1199.98px)",
+    'large_desktops'            : "only screen and (min-width: 1200px) and (max-width: 1500px)",
+);

@@ -1,0 +1,143 @@
+#blog-part {
+    @include padding(top, 75px);
+    @include padding(bottom, 90px);
+    @include for_breakpoint(portrait_phones){
+        padding-top: 40px;
+        padding-bottom: 20px;
+     }
+     @include for_breakpoint(landscape_phones){
+        padding-top: 40px;
+        padding-bottom: 20px;
+     }
+    .section-title {
+        text-align: center;
+        @include margin(bottom, 50px);
+        h3 {
+            font-size: $title_font_size;
+            color: $title_color;
+            font-weight: map-get($fontweight, semi-bold);
+            display: inline-block;
+            text-transform: uppercase;
+            @include padding(bottom, 10px);
+            position: relative;
+            &::after {
+            @include position_b(absolute,0,0);
+            right: 0;
+            margin: 0 auto;
+            content: '';
+            @include after_wh(90px, 1px, #dbdad8);
+            }
+        }
+    }
+    .single-blog{
+        @include transition(all linear .3s);
+        @include for_breakpoint(portrait_phones){
+            margin-bottom: 30px;
+       }
+       @include for_breakpoint(landscape_phones){
+        margin-bottom: 30px;
+        }
+        
+       @include for_breakpoint(tablets){
+        margin-bottom: 30px;
+        }
+        &:hover {
+			box-shadow: 0px 3px 27px 0px rgba(0, 0, 0, 0.17);
+            .read-more {
+                color: $theme_color;
+            }
+        }
+        .blog-img {
+            img {
+                @include for_breakpoint(portrait_phones){
+                   width: 100%;
+               } 
+               @include for_breakpoint(landscape_phones){
+                  width: 100%;
+              } 
+              
+              @include for_breakpoint(tablets){
+                width: 100%;
+            } 
+            }
+        }
+        .blog-content {
+            padding: 30px 24px 35px;
+            background: #f6f5ee;
+            text-align: center;
+            .blog-title {
+                @include margin(bottom, 20PX);
+                h3 {
+                    a {
+                        @include for_breakpoint(portrait_phones){
+                            font-size: 19px;
+                        }
+                        font-size: 24px;
+                        color: #323232;
+                        font-weight: map-get($fontweight, semi-bold);
+                        @include margin(bottom, 10px);
+                    }
+                }
+                .user-date {
+                    display: flex;
+                    justify-content: center;
+                    p {
+                        font-size: 12px;
+                        color: #868585;
+                        margin: 0 20px;
+                        position: relative;
+                        &::after{
+                            @include position(absolute, 50%, -20px);
+                            @include transfrom(translateY(-50%));
+                            content: '';
+                            @include after_wh(2px, 13px, #e3e2e0);
+                        }
+                        i {
+                            font-size: 10px;
+                            color: $theme_color;
+                            @include margin(right, 5px);
+                        }
+                    }
+                    .date {
+                        &::after {
+                            display: none;
+                        }
+                        i {
+                            color: #868585;
+                        }
+                    }
+                }
+            }
+            .blog-text {
+                @include margin(bottom, 30px);
+                @include for_breakpoint(portrait_phones){
+                    margin-bottom: 10px;
+            }
+                p {
+                    color: #414141;
+                    font-size: $para_font_size;
+                    line-height: 24px;
+                    font-family: $fonts_roboto;
+                    font-weight: map-get($fontweight, regular);
+
+                }
+            }
+            .read-more {
+                position: relative;
+                &::after {
+                    @include position_b(absolute, -3px, 0);
+                    content: '';
+                    right: 0;
+                    margin: 0 auto;
+                    @include after_wh(150px, 1px, #dbdad8);
+                }
+                a {
+                    font-size: 12px;
+                    color: #323232;
+                    font-weight: map-get($fontweight, medium);
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

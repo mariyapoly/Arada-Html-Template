@@ -1,0 +1,106 @@
+#product-part {
+	@include padding(top, 90px);
+	@include padding(bottom, 35px);
+	@include for_breakpoint(portrait_phones){
+		padding-top: 35px;
+
+	 }
+	.section-title {
+		text-align: center;
+		@include margin(bottom, 25px);
+		h3 {
+			font-size: $title_font_size;
+			color: $title_color;
+			font-weight: map-get($fontweight, semi-bold);
+			display: inline-block;
+			@include padding(bottom, 10px);
+			position: relative;
+			text-transform: uppercase;
+			&::after {
+			@include position_b(absolute,0,0);
+			right: 0;
+			margin: 0 auto;
+			content: '';
+			@include after_wh(90px, 1px, #dbdad8);
+			}
+		}
+	}
+	.product-tab-menu{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 60px;
+		@include for_breakpoint(portrait_phones){
+			margin-bottom: 30px;
+		 }
+		button{
+			border:0;
+			cursor: pointer;
+			background: none;
+			padding: 10px 0 5px 0;
+			margin: 10px 15px;
+			@include for_breakpoint(portrait_phones){
+				margin: 0 5px;
+			 }
+			text-transform: uppercase;
+			border-bottom: 2px solid #fff;
+			font-family: $fonts_jost;
+			font-weight: map-get($fontweight, semi-bold);
+			color: $title_color;
+			font-size: 13px;
+			&:focus{
+				outline: 0;
+			}
+		}
+		button.active{
+			border-color: #333;
+		}
+	}
+	.adara-product-wrap{
+		margin-bottom: 20px;
+	}
+	.adara-product-thumb{
+		position: relative;
+		background: #f6f5ee;
+		padding: 20px;
+		@include transition(all linear .3s);
+		span.product-discount-tag {
+			@include position_l(absolute, 20px, 20px);
+			padding: 0px 10px;
+			background: $theme_color;
+			display: inline-block;
+			font-size: $para_font_size;
+			color: $primary_color;
+			font-weight: map-get($fontweight, medium);
+		}
+		&:hover {
+			box-shadow: 0px 3px 27px 0px rgba(0, 0, 0, 0.17);
+		}
+	}
+	.adara-product-content{
+		padding: 20px;
+		h3 {
+			a {
+				font-size: 16px;
+				color: #544842;
+				font-weight: map-get($fontweight, semi-bold);
+				@include margin(bottom, 15px);
+			}
+		}
+		h3 {
+			font-size: $para_font_size;
+			color: #544842;
+			font-weight: map-get($fontweight, semi-bold);
+			@include margin(bottom, 5px);
+		}
+		.product-star-rating {
+			i {
+				font-size: 10px;
+				color: #a4a1a0;
+			}
+		}
+	}
+}
+
+
+
+

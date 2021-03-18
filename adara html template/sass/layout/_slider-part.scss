@@ -1,0 +1,165 @@
+#slider-part {
+    background: url(../images/banner/banner.png) no-repeat center;
+    background-size: cover;
+    @include margin(top, -46px);
+    @include for_breakpoint(portrait_phones){
+        @include margin(top, 0);
+     }
+     @include for_breakpoint(landscape_phones){
+        @include margin(top, 0);
+     }
+     
+     @include for_breakpoint(tablets){
+        @include margin(top, 0);
+     }
+     .slick-slide {
+         img {
+            @include for_breakpoint(portrait_phones){
+                max-width: 200px;
+                margin: 0 auto;
+                padding-bottom: 30px;
+             }
+         }
+     }
+    .single-slider {    
+        @include padding(top, 128px);
+        @include padding(bottom, 153px);
+        @include for_breakpoint(portrait_phones){
+            text-align: center;
+         }
+         @include for_breakpoint(landscape_phones){
+            text-align: center;
+         }
+        .slider-content{
+            .slider-text {
+                h3 {
+                    font-size: $para_font_size;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, bold);
+                    color: $secondary_color;
+                    text-transform: uppercase;
+                    @include padding(bottom, 10px);
+                    @include margin(bottom, 5px);
+                    position: relative;
+                    &::after{
+                        @include position_b(absolute, 0, 0);
+                        content: '';
+                        @include after_wh(96px, 1px, $theme_color);
+                        @include for_breakpoint(portrait_phones){
+                            right: 0;
+                            margin: 0 auto;
+                         }
+                         @include for_breakpoint(landscape_phones){
+                            right: 0;
+                            margin: 0 auto;
+                         }
+                    }
+                }
+                h1 {
+                    color: $secondary_color;
+                    font-size: 80px;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, semi-bold);
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                    @include for_breakpoint(portrait_phones){
+                        font-size: 35px;
+                     }
+                     @include for_breakpoint(landscape_phones){
+                        font-size: 35px;
+                     }
+                     
+                     @include for_breakpoint(tablets){
+                        font-size: 40px;
+                     }
+                }
+                h2 {
+                    color: $secondary_color;
+                    font-size: 70px;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, semi-bold);
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                    span {
+                        color: $theme_color;
+                    }
+                    @include for_breakpoint(portrait_phones){
+                        font-size: 40px;
+                     }
+                     @include for_breakpoint(landscape_phones){
+                         font-size: 40px;
+                      }
+                      
+                     @include for_breakpoint(tablets){
+                        font-size: 55px;
+                     }
+                }
+                p {
+                    font-size: 15px;
+                    color: $secondary_color;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, medium);
+                    @include margin(top, 12px);
+                    @include margin(bottom, 30px);
+                }
+            }
+            .slider-btn {
+                a {
+                    @extend %btn;
+                    @include transition(all linear .3s);
+                    &:hover {
+                        background: $theme_color;
+                        color: $primary_color;
+                    }
+                }
+            }
+        }
+    }
+    .slick-slider {
+        .slick-arrow {
+            @include position(absolute, 50%, 40px);
+            @include transfrom(translateY(-50%));
+            font-size: $para_font_size;
+            color: #989898;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            @include border-radius(50%);
+            background: $primary_color;
+            text-align: center;
+            z-index: 99;
+            cursor: pointer;
+            @include transition(all linear .3s);
+            &:hover {
+                color: $primary_color;
+                background: $theme_color;
+            }
+            @include for_breakpoint(portrait_phones){
+                width: 36px;
+                height: 36px;
+                line-height: 36px;
+
+            }
+            
+            @include for_breakpoint(landscape_phones){
+                width: 36px;
+                height: 36px;
+                line-height: 36px;
+
+            }
+            @include for_breakpoint(tablets){
+                right: 0;
+
+            }
+        }
+        .prev {
+            right: auto;
+            left: 40px;
+            
+            @include for_breakpoint(tablets){
+                left: 0;
+
+            }
+        }
+    }
+}

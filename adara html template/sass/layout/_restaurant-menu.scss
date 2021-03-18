@@ -1,0 +1,227 @@
+#restaurant-menu {
+    position: relative;
+    @include padding(top, 120px);
+    @include for_breakpoint(portrait_phones){
+        padding-top: 100px;   
+    }
+    .shape {
+        @include position(absolute, 0 , 0);
+        left: 0;
+        text-align: center;
+    }
+    .restaurant-title {
+        text-align: center;
+        border-bottom: 1px solid #e6e6e5;
+        h4 {
+            @extend %tab-title;
+        }
+        p {
+            font-size: 30px;
+            color: $title_color;
+            font-family: $fonts_jost;
+            font-weight: map-get($fontweight, medium);
+            line-height: 40px;
+            @include margin(bottom, 55px);
+            @include for_breakpoint(portrait_phones){
+                margin-bottom: 20px; 
+                font-size: 22px;
+                line-height: 30px;   
+            }
+        }
+    }
+    .nav {
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-tabs {
+        @include padding(top, 30px);
+        @include padding(bottom, 20px);
+        @include for_breakpoint(portrait_phones){
+            padding-top: 15px;   
+        }
+        @include for_breakpoint(landscape_phones){
+            padding-top: 15px;   
+        }
+        border-bottom: none;
+        text-align: center;
+        .nav-link {
+            
+        .menu-item img {
+            @include for_breakpoint(portrait_phones){
+                width: 40px;
+             }
+             @include for_breakpoint(landscape_phones){
+                width: 40px;
+             }
+          }
+          .menu-item {
+              @include for_breakpoint(portrait_phones){
+                margin: 10px;
+             }
+             @include for_breakpoint(landscape_phones){
+                margin: 10px;
+             }
+          }
+            border: none;
+            @include padding(top, 55px);
+            @include padding(bottom, 55px);
+            @include padding(left, 29px);
+            @include padding(right, 29px);
+            @include for_breakpoint(portrait_phones){
+                padding: 0;
+             }
+             @include for_breakpoint(landscape_phones){
+                padding: 0;
+             }
+             
+             @include for_breakpoint(tablets){
+                padding-top: 0;
+                padding-bottom: 35px;
+             }
+            p {
+                color: $title_color;
+                font-size: 16px;
+                font-family: $fonts_jost;
+                font-weight: map-get($fontweight, medium);
+                @include margin(top, 30px);
+                @include for_breakpoint(portrait_phones){
+                    margin-top: 3px;
+                    font-size: 12px;
+                 }
+                 @include for_breakpoint(landscape_phones){
+                    margin-top: 3px;
+                    font-size: 12px;
+                 }
+                span {
+                    font: $para_font_size;
+                    color: #877e79;
+                    font-weight: map-get($fontweight, regular);
+                }
+            }
+            .king {
+                @include margin(top, 20px);
+                @include for_breakpoint(portrait_phones){
+                    margin-top: 3px;
+                 }
+                 @include for_breakpoint(landscape_phones){
+                    margin-top: 3px;
+                 }
+            }
+        }
+        .nav-link.active {
+            color: #495057;
+            background-color: #fff;
+            border: none;
+            p {
+                color: $theme_color;
+                span {
+                    color: #877e79;
+                }
+            }
+        }
+    }
+    .tab-content {
+        .tab-img {
+            background: url(../images/restuarent-menu/restuarent_06.png) no-repeat center;
+            background-size: cover;
+            @include padding(top, 115px);
+            @include padding(bottom, 150px);
+            text-align: right;
+            @include for_breakpoint(portrait_phones){
+                padding: 50px;
+            }
+            @include for_breakpoint(landscape_phones){
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+        }
+        .single-tab {
+            @include padding(top, 85px);
+            @include padding(bottom, 36px);
+            @include padding(left, 65px);
+            @include for_breakpoint(portrait_phones){
+                padding: 20px 0;
+            }
+            @include for_breakpoint(landscape_phones){
+                @include padding(top, 30px);
+                @include padding(bottom, 1px);
+                @include padding(left, 15px);
+            }
+            background: url(../images/restuarent-menu/restuarent_10.png) no-repeat center;
+            background-size: cover;
+            .tab-title {
+                @include for_breakpoint(portrait_phones){
+                    text-align: center;
+                }
+                h4 {
+                    @extend %tab-title;
+                    &:before {
+                        left: 0px;
+                        @include for_breakpoint(portrait_phones){
+                            left: -30px;
+                        }
+                    }
+                    @include padding(left, 30px);
+                    @include margin(bottom, 10px);
+                    @include for_breakpoint(portrait_phones){
+                        @include padding(left, 0);
+                    }
+                }
+                h2 {
+                    font-size: 34px;
+                    font-family: $fonts_jost;
+                    font-weight: map-get($fontweight, semi-bold);
+                    line-height: 45px;
+                    text-transform: uppercase;
+                    @include margin(bottom, 40px);
+                    @include for_breakpoint(portrait_phones){
+                        font-size: 26px;
+                        line-height: 1.2;
+                    }
+                }
+            }
+            .tab-list {
+                @include margin(bottom, 50px);
+                display: flex;
+                @include for_breakpoint(portrait_phones){
+                    margin-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 15px;
+                }
+                @include for_breakpoint(landscape_phones){
+                    margin-bottom: 30px;
+                }
+                .tab-list-img {
+                    width: 21%;
+                }
+                .tab-text {
+                    width: 79%;
+                    @include padding(left, 18px);
+                    @include for_breakpoint(portrait_phones){
+                        @include padding(left, 9px);
+                    }
+                    h4 {
+                        font-size: $title_font_size;
+                        font-weight: map-get($fontweight, semi-bold);
+                        @include margin(bottom, 15px);
+                        @include for_breakpoint(portrait_phones){
+                            @include margin(bottom, 5px);
+                        }
+                    }
+                    p {
+                        font-size: $para_font_size;
+                        line-height: 24px;
+                        font-family: $fonts_roboto;
+                        font-weight: map-get($fontweight, regular);
+                        color: #414141;
+                        @include padding(right, 83px);
+                        @include for_breakpoint(portrait_phones){
+                            @include padding(right, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

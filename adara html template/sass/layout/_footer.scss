@@ -1,0 +1,109 @@
+#footer {
+    background: #262626;
+    @include padding(top, 55px);
+    @include padding(bottom, 65px);
+    .footer-logo {
+        text-align: center;
+        border-bottom: 1px solid #1c1c1c;
+        @include padding(bottom, 45px);
+        @include margin(bottom, 40px);
+        position: relative;
+        &::after{
+            @include position_b(absolute, 0, 0);
+            content: '';
+            right: 0;
+            margin: 0 auto;
+            @include after_wh(150px, 1px, $theme_color);
+        }
+    }
+    .footer-menu {
+        @include margin(bottom, 40px);
+        @include for_breakpoint(portrait_phones){
+            margin-bottom: 30px;
+            text-align: center;
+         }
+         @include for_breakpoint(landscape_phones){
+            margin-bottom: 30px;
+            text-align: center;
+         }
+        nav {
+            ul {
+                li {
+                    display: inline-block;
+                    @include margin(right, 35px);
+                    @include for_breakpoint(portrait_phones){
+                        padding: 5px 10px;
+                        margin: 0;
+                     }
+                     @include for_breakpoint(landscape_phones){
+                        padding: 5px 22px;
+                        margin: 0;
+                     }
+                     @include for_breakpoint(tablets){
+                        margin-right: 18px;
+                     }
+                    &:hover a {
+                        color: $theme_color;
+                    }
+                    a {
+                        font-size: 13px;
+                        color: #898481;
+                        text-transform: uppercase;
+                        @include transition(all linear .3s);
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        p {
+            @include for_breakpoint(portrait_phones){
+                text-align: center;
+                margin-bottom: 20px;
+             }
+             @include for_breakpoint(landscape_phones){
+                text-align: center;
+                margin-bottom: 20px;
+             }
+            color: #898481;
+            font-size: 13px;
+            text-transform: uppercase;
+            span {
+                color: $theme_color;
+            }
+        }
+    }
+    .footer-icon {
+        text-align: right;
+        @include margin(bottom, 45px);
+        @include for_breakpoint(portrait_phones){
+            text-align: center;
+            margin-bottom: 20px;
+         }
+         @include for_breakpoint(landscape_phones){
+            text-align: center;
+            margin-bottom: 20px;
+         }
+        a {
+            font-size: 13px;
+            color: #898481;
+            @include margin(left, 15px);
+            @include transition(all linear .3s);
+            &:hover {
+                color: $theme_color;
+            }
+            @include for_breakpoint(tablets){
+                margin-left: 13px;
+             }
+        }
+    }
+    .bank {
+        text-align: right;
+        @include for_breakpoint(portrait_phones){
+            text-align: center;
+         }
+         @include for_breakpoint(landscape_phones){
+            text-align: center;
+         }
+    }
+}

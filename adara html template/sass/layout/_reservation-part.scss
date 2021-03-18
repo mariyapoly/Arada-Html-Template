@@ -1,0 +1,208 @@
+#reservation-part {
+    background: url(../images/booking/booking-bg.png) no-repeat center;
+    background-size: cover;
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background: rgba(32, 32, 38, 0.5);
+        padding: 80px 0;
+        @include for_breakpoint(portrait_phones){
+            padding: 40px 0;
+         }
+         
+        @include for_breakpoint(landscape_phones){
+            padding: 40px 0;
+         }
+        .reservation-wrapper {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 45px 148px 60px;
+            @include for_breakpoint(portrait_phones){
+                padding: 20px 0;
+             }
+             @include for_breakpoint(landscape_phones){
+                padding: 0;
+             }
+             
+             @include for_breakpoint(tablets){
+                padding: 10px;
+             }
+            .reservation-img {
+                margin-bottom: 10px;
+            }
+            .reservation-title {
+                position: relative;
+                h2 {
+                    font-size: 70px;
+                    @include for_breakpoint(portrait_phones){
+                        font-size: 40px;
+                     }
+                     @include for_breakpoint(landscape_phones){
+                        font-size: 40px;
+                     }
+                     
+                     @include for_breakpoint(tablets){
+                        font-size: 40px;
+                     }
+                    color: $primary_color;
+                    font-weight: map-get($fontweight, bold);
+                    text-transform: uppercase;
+                    @include margin(bottom, 40px);
+                    span {
+                        color: $theme_color;
+                    }
+                }
+                .sign {
+                    text-align: right;
+                    color: $theme_color;
+                    font-size: 40px;
+                    font-family: $fonts_dancing_script;
+                    font-weight: map-get($fontweight, semi-bold);
+                    @include position_b(absolute, -16px, auto);
+                    right: 120px;
+                    @include for_breakpoint(portrait_phones){
+                        bottom: -18px;
+                        font-size: 30px;
+                        right: 0;
+                     }
+                     @include for_breakpoint(landscape_phones){
+                        bottom: -18px;
+                        font-size: 30px;
+                        right: 110px;
+                     }
+                     
+                     @include for_breakpoint(tablets){
+                        font-size: 30px;
+                        right: 190px;
+                     }
+                }
+            }
+            .contact-address {
+                background: rgba(28, 26, 28, 0.5);
+                @include padding(top, 30px);
+                @include padding(bottom, 30px);
+                @include margin(bottom, 10px);
+                p {
+                    font-size: 16px;
+                    font-weight: map-get($fontweight, semi-bold);
+                    line-height: 28px;
+                    color: $primary_color;
+                    width: 330px;
+                    @include for_breakpoint(portrait_phones){
+                        width: auto;
+                     }
+                     @include for_breakpoint(landscape_phones){
+                        width: auto;
+                     }
+                    margin: 0 auto;
+                    span {
+                        color: $theme_color;
+                    }
+                }
+
+            }
+            .booking-form {
+                .form-wrapper {
+                    display: flex;
+                    @include for_breakpoint(portrait_phones){
+                        flex-direction: column;
+                     }
+                     @include for_breakpoint(landscape_phones){
+                        flex-direction: column;
+                     }
+                    .form-w {
+                        width: 190px;
+                        @include for_breakpoint(portrait_phones){
+                            width: 100%;
+                         }
+                         @include for_breakpoint(landscape_phones){
+                            width: 100%;
+                         }
+                         @include for_breakpoint(tablets){
+                            width: 211px;
+                         }
+                        position: relative;
+                        i {
+                            @include position_l(absolute, 50%, 20px);
+                            @include transfrom(translateY(-50%));
+                            color: $theme_color;
+                            &::after{
+                                @include position(absolute, -7px, -18px);
+                                content: '';
+                                @include after_wh(2px, 31px, #535251);
+                            }
+                        }
+                    }
+                    input {
+                        @include for_breakpoint(portrait_phones){
+                            width: 100%;
+                            margin-bottom: 10px;
+                         }
+                         @include for_breakpoint(landscape_phones){
+                            width: 100%;
+                            margin-bottom: 10px;
+                         }
+                         @include for_breakpoint(tablets){
+                            width: 100%;
+                         }
+                        background: rgba(28, 26, 28, 0.5);
+                        border: 1px solid #413b39;
+                        font-size: 12px;
+                        font-weight: map-get($fontweight, medium);
+                        padding: 15px 0 15px 65px;
+                        color: #dfdbdb;
+                        &::placeholder {
+                            color: #dfdbdb;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    select {
+                        width: 190px;
+                        @include for_breakpoint(portrait_phones){
+                            width: 100%;
+                         }
+                         @include for_breakpoint(landscape_phones){
+                            width: 100%;
+                         }
+                         @include for_breakpoint(tablets){
+                            width: 100%;
+                         }
+                        background: rgba(28, 26, 28, 0.5);
+                        border: 1px solid #413b39;
+                        font-size: 12px;
+                        font-weight: map-get($fontweight, medium);
+                        padding: 15px 0 15px 65px;
+                        color: #dfdbdb;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    .time {
+                        margin: 0 27px;
+                        @include for_breakpoint(portrait_phones){
+                            margin: 0;
+                         }
+                         @include for_breakpoint(landscape_phones){
+                            margin: 0;
+                         }
+                    }
+                }
+                button {
+                    @extend %btn;
+                    background: $theme_color;
+                    color: $primary_color;
+                    border: none;
+                    @include margin(top, 30px);
+                    cursor: pointer;
+                    @include transition(all linear .3s);
+                    &:hover{
+                        background: $primary_color;
+                        color: $theme_color;
+                    }
+                }
+            }
+        }
+    }
+}
